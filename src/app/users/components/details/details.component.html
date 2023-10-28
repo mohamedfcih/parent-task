@@ -1,0 +1,12 @@
+<div class="container d-flex justify-content-center text-center mt-5">
+<div class="card col-6 py-5" >
+  <div class="d-flex flex-column">
+  <div class="my-3">
+    <img [src]="selectedUser.avatar" [alt]="selectedUser.first_name"/>
+
+  </div>
+  <div>
+  <h1 class="display-4">{{title}}</h1>
+  <p class="lead">{{selectedUser.email}}</p>
+  </div>
+</div>

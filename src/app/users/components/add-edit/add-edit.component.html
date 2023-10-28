@@ -1,0 +1,35 @@
+<div class="p-4">
+    <div class="container">
+        <h1 class="text-center">{{title}}</h1>
+        <form *ngIf="!loading" [formGroup]="form" (ngSubmit)="onSubmit()" class="col-6 m-auto mt-3">
+            <div class="row">
+                <div class="mb-3 col-12">
+                    <label class="form-label">Name</label>
+                    <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                        <div *ngIf="f.name.errors.required">Name is required</div>
+                    </div>
+                </div>
+                <div class="mb-3 col-12">
+                    <label class="form-label">
+                        Job
+                    </label>
+                    <input type="job" formControlName="job" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.job.errors }" />
+                    <div *ngIf="submitted && f.job.errors" class="invalid-feedback">
+                        <div *ngIf="f.job.errors.required">Job is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <button [disabled]="submitting" class="btn btn-primary">
+                    <span *ngIf="submitting" class="spinner-border spinner-border-sm me-1"></span>
+                    Save
+                </button>
+                <a routerLink="/users" class="btn btn-link">Cancel</a>
+            </div>
+        </form>
+        <div *ngIf="loading" class="text-center m-5">
+            <span class="spinner-border spinner-border-lg align-center"></span>
+        </div>
+    </div>
+</div>

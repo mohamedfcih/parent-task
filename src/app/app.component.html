@@ -1,0 +1,28 @@
+<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-info px-3 justify-content-between" *ngIf="user">
+  <div class="navbar-brand">
+    Parent APS
+  </div>
+  <div class="navbar-nav">
+    <a
+      class="nav-item nav-link"
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Users</a
+    >
+    <button class="btn btn-link nav-item nav-link" (click)="logout()">
+      Logout
+    </button>
+  </div>
+</nav>
+
+
+
+
+
+<!-- main app container -->
+<div class="container">
+  <alert></alert>
+  <router-outlet></router-outlet>
+</div>
